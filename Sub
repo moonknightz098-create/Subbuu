@@ -1,0 +1,156 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For My Valentine 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', cursive;
+      background: linear-gradient(to bottom, #ffd6e8, #fff);
+      text-align: center;
+      color: #b3005e;
+      overflow-x: hidden;
+    }
+    .container {
+      padding: 40px 20px;
+    }
+    h1 { font-size: 2.4em; }
+    h2 { font-size: 1.4em; }
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 25px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    p {
+      font-size: 1.1em;
+      line-height: 1.7;
+    }
+    img {
+      width: 100%;
+      border-radius: 15px;
+      margin-top: 15px;
+    }
+    button {
+      margin-top: 20px;
+      background: #ff4d88;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1em;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #e6005c;
+    }
+    .heart {
+      position: fixed;
+      color: #ff4d88;
+      animation: float 6s linear infinite;
+      bottom: -50px;
+      font-size: 18px;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-110vh); opacity: 0; }
+    }
+    #photos, #ending, #surprise {
+      display: none;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    footer {
+      margin-top: 30px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+<audio autoplay loop>
+  <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Komiku/Its_time_for_adventure/Komiku_-_07_-_I_Wanna_Be_Yours.mp3">
+</audio>
+<div class="container" id="page1">
+  <h1>💌 Hey Subuhana 💌</h1>
+  <h2>My sweet Subbuuu 🥰</h2>
+  <div class="card">
+    <p>
+      I made this little page just for you 💗<br><br>
+      You make my heart smile,<br>
+      my days brighter,<br>
+      and my world happier 🌸<br><br>
+      Every time I think of love,<br>
+      it somehow feels like <strong>you</strong> 💖
+    </p>
+    <button onclick="showPhotos()">Tap here 💝</button>
+  </div>
+</div>
+<div class="container" id="photos">
+  <h2>Our little memories 💞</h2>
+  <div class="card">
+    <img src="photo1.png">
+    <img src="photo2.png">
+    <img src="photo3.png">
+    <button onclick="showEnding()">One last thing 💖</button>
+  </div>
+</div>
+<div class="container" id="ending">
+  <div class="card">
+    <p>
+      Subbuuu 🥺💞<br><br>
+      No matter where life takes us,<br>
+      no matter what comes our way…<br><br>
+      My heart chooses you.<br>
+      Today. Tomorrow. Always. 🌹<br><br>
+      <strong>Forever Yours 💖</strong>
+    </p>
+  </div>
+  <footer>
+    With all my love,<br>
+    — <strong>Afsal</strong> 💕
+  </footer>
+</div>
+<div class="container" id="surprise">
+  <div class="card">
+    <p>
+      One last secret… 🤍<br><br>
+      You will always be<br>
+      my favorite person 🫶
+    </p>
+  </div>
+</div>
+<script>
+  function showPhotos() {
+    document.getElementById("page1").style.display = "none";
+    document.getElementById("photos").style.display = "block";
+  }
+  function showEnding() {
+    document.getElementById("photos").style.display = "none";
+    document.getElementById("ending").style.display = "block";
+    setTimeout(() => {
+      document.getElementById("surprise").style.display = "block";
+    }, 3000);
+  }
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 18 + 12 + "px";
+    heart.innerHTML = "💗";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+  }
+  setInterval(createHeart, 400);
+</script>
+valentine/
+ 
+</body>
+</html>
